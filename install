@@ -1,0 +1,29 @@
+#!/bin/bash
+replace=""
+
+for f in $(ls)
+do
+  test $f = "install" && continue
+  dest="$HOME/.$f"
+  file="$PWD/$f"
+  if [ -e $dest ] || [ -h $dest ]; then
+    if [ "$replace" != "a" ]; then 
+      echo "$dest already exists, replace? [y/n/a] "
+      read replace
+    fi
+    if [ "$replace" = "a" ] || [ "$replace" = "y" ]; then
+      echo "linking $file to $dest..."
+      rm -f $dest
+      ln -s $file $dest
+      test "$replace" != "a" && replace=""
+    else
+      echo "skipping $file as it already exists..."
+    fi
+  else
+    echo "linking $file to $dest..."
+    ln -s $file $dest
+  fi
+done
+
+wget --no-check-certificate https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | sh
+
