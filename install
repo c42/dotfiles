@@ -19,8 +19,8 @@ do
     else
       echo "skipping $file as it already exists..."
     fi
-  elif [[ "$f" -eq "README" ]]; then
-    echo "skipping README."
+  elif [ "$f" == "README" ]; then  
+    echo "skipping README: $f."
   else
     echo "linking $file to $dest..."
     ln -s $file $dest
