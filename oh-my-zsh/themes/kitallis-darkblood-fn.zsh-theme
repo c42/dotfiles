@@ -14,23 +14,26 @@ function git_info {
   echo "%{$(git_prompt_info)%}%(?,,%{$fg[red]%}[%{$fg_bold[white]%}%?%{$reset_color%}%{$fg[red]%}])"
 }
 
-function current_directory {
-  echo "%{$fg[blue]%}[%{\e[32m%}%~%{$reset_color%}%{$fg[blue]%}]"
-}
-
 function rvm_info {
   echo "%{$reset_color%} %{$fg[red]%}$(check_for_rvmrc)%{$reset_color%}"
 }
 
-function prompt_char {
-  echo "⇒% "
+function directory {
+  echo "%{$fg[blue]%}[%{\e[32m%}%~%{$reset_color%}%{$fg[blue]%}]"
+}
+
+function prompt_character {
+  git branch >/dev/null 2>/dev/null && echo '±' && return
+  hg root >/dev/null 2>/dev/null && echo '☿' && return
+  echo '○'
+  #echo "⇒% "
 }
 
 ## Prompts
-PROMPT=$'$(user_computer) $(git_info) $(current_directory) \n $(prompt_char) %{$reset_color%} '
-PS2=$' %{$fg[red]%}|⇒%  %{$reset_color%} '
 
-RPROMPT='$(rvm_info)'
+PROMPT=$'$(directory) $(git_info) %{$reset_color%} '
+PS2=$' $(prompt_character) %{$reset_color%} '
+RPROMPT=$'$(rvm_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}[%{$fg_bold[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%{$fg[red]%}] "
