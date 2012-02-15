@@ -9,4 +9,5 @@
  ("/Users/steven/.emacs.d/elpa/starter-kit-bindings-2.0.2/starter-kit-bindings-autoloads.el" . 2120)
  ("/Users/steven/.emacs.d/elpa/starter-kit-eshell-2.0.2/starter-kit-eshell-autoloads.el" . 1446)
  ("/Users/steven/.emacs.d/elpa/starter-kit-lisp-2.0.3/starter-kit-lisp-autoloads.el" . 1916)
- ("/Users/steven/.emacs.d/elpa/starter-kit-ruby-2.0.3/starter-kit-ruby-autoloads.el" . 2443))
+ ("/Users/steven/.emacs.d/elpa/starter-kit-ruby-2.0.3/starter-kit-ruby-autoloads.el" . 2443)
+ ("/Users/steven/code/dotfiles/emacs.d/init.el" . 2493))
