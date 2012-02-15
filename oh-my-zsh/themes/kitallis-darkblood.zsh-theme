@@ -6,6 +6,14 @@ function check_for_rvmrc {
   if [ -e `pwd`/.rvmrc ]; then ~/.rvm/bin/rvm-prompt; fi;
 }
 
+function rvm_info {
+  echo "%{$reset_color%} %{$fg[red]%}$(check_for_rvmrc)%{$reset_color%}"
+}
+
+function rbenv_info {
+  rbenv local 2>/dev/null
+}
+
 function user_computer {
   #echo "%{$fg[red]%}[%{\e[1;33m%}%n%{$reset_color%}%{\e[31m%} at %{\e[0;35m%}%m%{$reset_color%}%{$fg[red]%}]"
   echo "%{\e[1;33m%}[%n at %m]%{$reset_color%}"
@@ -19,10 +27,6 @@ function current_directory {
   echo "%{$fg[cyan]%}[%{\e[32m%}%~%{$reset_color%}%{$fg[cyan]%}]"
 }
 
-function rvm_info {
-  echo "%{$reset_color%} %{$fg[red]%}$(check_for_rvmrc)%{$reset_color%}"
-}
-
 function prompt_char() {
   git branch >/dev/null 2>/dev/null && echo "%{$fg[green]%}±%{$reset_color%}" && return
   hg root >/dev/null 2>/dev/null && echo "%{$fg_bold[red]%}☿%{$reset_color%}" && return
@@ -33,7 +37,7 @@ function prompt_char() {
 PROMPT=$'$(user_computer) $(git_info) $(current_directory) \n$(prompt_char) %{$reset_color%} '
 PS2=$'%{$fg[red]%}$(prompt_char) %{$reset_color%} '
 
-RPROMPT='$(rvm_info)'
+RPROMPT='$(rbenv_info)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}[%{$fg_bold[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%{$fg[red]%}] "
