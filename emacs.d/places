@@ -1,0 +1,12 @@
+;;; -*- coding: utf-8 -*-
+(("/Users/steven/.emacs.d/elpa/clojure-mode-1.11.5/clojure-mode-autoloads.el" . 1102)
+ ("/Users/steven/.emacs.d/elpa/clojure-test-mode-1.6.0/clojure-test-mode-autoloads.el" . 775)
+ ("/Users/steven/.emacs.d/elpa/clojurescript-mode-0.5/clojurescript-mode-autoloads.el" . 519)
+ ("/Users/steven/.emacs.d/elpa/elisp-slime-nav-0.2/elisp-slime-nav-autoloads.el" . 795)
+ ("/Users/steven/.emacs.d/elpa/go-mode-11071/go-mode-autoloads.el" . 1093)
+ ("/Users/steven/.emacs.d/elpa/inf-ruby-2.2.3/inf-ruby-autoloads.el" . 1247)
+ ("/Users/steven/.emacs.d/elpa/slime-20100404.1/slime-autoloads.el" . 2550)
+ ("/Users/steven/.emacs.d/elpa/starter-kit-bindings-2.0.2/starter-kit-bindings-autoloads.el" . 2120)
+ ("/Users/steven/.emacs.d/elpa/starter-kit-eshell-2.0.2/starter-kit-eshell-autoloads.el" . 1446)
+ ("/Users/steven/.emacs.d/elpa/starter-kit-lisp-2.0.3/starter-kit-lisp-autoloads.el" . 1916)
+ ("/Users/steven/.emacs.d/elpa/starter-kit-ruby-2.0.3/starter-kit-ruby-autoloads.el" . 2443))

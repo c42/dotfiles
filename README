@@ -1,5 +1,9 @@
 = put your c42 environment magic in here
 
+== installation
+
+$ ./install
+
 == zsh customization
 
 * \e or \033 is "escape", used to set colour
