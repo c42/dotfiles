@@ -37,6 +37,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
 
 # aliases -----------------------------------------------------
+alias drm='cd ~/code/rubymonk'
 
 # general
 alias la="ls -lach"
