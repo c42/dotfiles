@@ -1,2 +1,4 @@
 [alias]
     ci = commit
+[color]
+    ui = true
