@@ -1,6 +1,12 @@
+[user]
+	name = Steven Deobald
+	email = steven@c42.in
+
+
 [alias]
-    ci = commit
-    co = checkout
-    st = status
+	ci = commit
+	co = checkout
+	st = status
+
 [color]
-    ui = true
+	ui = true

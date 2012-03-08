@@ -27,3 +27,4 @@ do
   fi
 done
 
+nano $HOME/.gitconfig
