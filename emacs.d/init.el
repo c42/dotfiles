@@ -21,11 +21,20 @@
                       starter-kit-lisp
                       starter-kit-bindings
                       starter-kit-ruby
-                      starter-kit-eshell
-                      go-mode
+                      starter-kit-eshell 
                       clojure-mode
                       clojure-test-mode
-                      clojurescript-mode)
+                      clojurescript-mode
+                      ruby-test-mode
+                      ruby-block
+                      ruby-end
+                      flymake-ruby
+                      haml-mode
+                      flymake-haml
+                      css-mode
+                      scss-mode
+                      flymake-css
+                      flymake-shell)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -84,6 +93,9 @@
   (progn
     (require 'color-theme-wombat)
     (color-theme-wombat)))
+
+(add-to-list 'auto-mode-alist '("zshrc" . sh-mode))
+(add-to-list 'auto-mode-alist '("bashrc" . sh-mode))
 
 ;; OSX SPECIFIC THINGS
 ;;--------------------------------------------------
