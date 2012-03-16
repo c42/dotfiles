@@ -9,14 +9,13 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-;; THIS IS A HACK. WHAT THE FUCK.
-(defvar color-themes nil)
-
 (defvar my-packages '(color-theme
                       color-theme-solarized
-                      color-theme-wombat
-                      color-theme-railscasts
-                      color-theme-tango
+                      ;;color-theme-wombat
+                      ;;color-theme-railscasts
+                      ;;color-theme-tango
+                      ;;color-theme-molokai
+                      color-theme-monokai
                       starter-kit
                       starter-kit-lisp
                       starter-kit-bindings
@@ -83,16 +82,7 @@
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
 
-;; solarized
-;; (eval-after-load 'color-theme
-;;   (progn
-;;     (require 'color-theme-solarized)
-;;     (color-theme-solarized-light)))
-
-(eval-after-load 'color-theme
-  (progn
-    (require 'color-theme-wombat)
-    (color-theme-wombat)))
+(load-theme 'solarized-light t)
 
 (add-to-list 'auto-mode-alist '("zshrc" . sh-mode))
 (add-to-list 'auto-mode-alist '("bashrc" . sh-mode))
