@@ -33,7 +33,8 @@
                       css-mode
                       scss-mode
                       flymake-css
-                      flymake-shell)
+                      flymake-shell
+                      markdown-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
