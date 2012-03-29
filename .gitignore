@@ -2,3 +2,7 @@ emacs.d/auto-save-list
 emacs.d/backups
 emacs.d/.smex-items
 emacs.d/places
+emacs.d/elpa
+emacs.d/session*
+emacs.d/swank
+emacs.d/url

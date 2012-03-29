@@ -65,7 +65,7 @@
 ;; use inconsolata
 (set-face-attribute 'default nil
                     :family "Inconsolata"
-                    :height 160)
+                    :height 140)
 
 ;; show line numbers
 (global-linum-mode t)
@@ -109,3 +109,5 @@
 ;;(global-set-key "\C-c\C-k" 'kill-region)
 
 (global-set-key [f5] 'call-last-kbd-macro)
+
+(require 'sclang)
