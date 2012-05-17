@@ -67,6 +67,7 @@ alias ll="ls -l"
 alias gi="gem install"
 alias ctags="/usr/local/Cellar/ctags/5.8/bin/ctags"
 alias refreshctags="ctags -f tags --recurse=yes . && find . -name '*.rb' -o -name '*.java' -o -name '*.cs' -o -name '*.js' -o -name '*.haml' -o -name '*.erb' >| cscope.files && cscope -b -q"
+alias sp=spork
 alias r=rake
 alias b=bundle
 alias be='bundle exec'
@@ -112,3 +113,4 @@ eval "$(rbenv init -)"
 
 export PATH=./bin:~/.bin:$PATH
 
+export JRUBY_OPTS=--1.9

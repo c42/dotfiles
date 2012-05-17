@@ -15,3 +15,5 @@
 
 [core]
   excludesfile = ~/.gitignore
+[push]
+	default = tracking
