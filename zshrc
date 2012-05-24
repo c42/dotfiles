@@ -32,9 +32,10 @@ ZSH_THEME="kitallis-darkblood"
 plugins=(git ruby rails)
 
 source $ZSH/oh-my-zsh.sh
+unsetopt correct_all
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # aliases -----------------------------------------------------
 alias drm='cd ~/code/rubymonk'
@@ -58,6 +59,7 @@ alias glg='git log --pretty=oneline'
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="./bin:$PATH"
 
 # rbenv
 eval "$(rbenv init -)"
