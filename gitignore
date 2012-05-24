@@ -1,0 +1,7 @@
+cscope.*
+ncscope.*
+tags
+.DS_Store
+tmtags
+.bundle
+.idea/workspace.xml

@@ -44,6 +44,34 @@ alias drm='cd ~/code/rubymonk'
 alias la="ls -lach"
 alias lsd="ls | grep ^d"
 
+# global aliases
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| ack'
+alias -g L="| less"
+alias -g M="| most"
+alias -g B="&|"
+alias -g HL="--help"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+
+alias ll="ls -l"
+alias gi="gem install"
+alias ctags="/usr/local/Cellar/ctags/5.8/bin/ctags"
+alias refreshctags="ctags -f tags --recurse=yes . && find . -name '*.rb' -o -name '*.java' -o -name '*.cs' -o -name '*.js' -o -name '*.haml' -o -name '*.erb' >| cscope.files && cscope -b -q"
+alias r=rake
+alias b=bundle
+alias be='bundle exec'
+
+export HISTFILE=~/.zhistory
+
 # git aliases
 alias gst='git status'
 alias gl='git pull'
@@ -55,12 +83,31 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias glg='git log --pretty=oneline'
 
+
+# directory options
+setopt auto_cd
+setopt auto_pushd
+
 # paths -------------------------------------------------------
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="./bin:$PATH"
 
+alias vi=vim
+alias ep="vim ~/.zshrc && source ~/.zshrc"
+if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
+  alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+  export GIT_EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
+fi
+export EDITOR="vim"
+
+
+# folder aliases
+[[ -e ~/.zshrc-aliases ]] && source ~/.zshrc-aliases
+
 # rbenv
 eval "$(rbenv init -)"
+
+export PATH=./bin:~/.bin:$PATH
 
