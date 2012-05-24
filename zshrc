@@ -42,7 +42,7 @@ alias drm='cd ~/code/rubymonk'
 # general
 alias la="ls -lach"
 alias lsd="ls | grep ^d"
-
+alias ack=ack-grep
 # git aliases
 alias gst='git status'
 alias gl='git pull'
