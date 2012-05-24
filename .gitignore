@@ -4,5 +4,8 @@ emacs.d/elpa/*
 emacs.d/swank/*
 emacs.d/.smex-items
 emacs.d/places
+emacs.d/elpa
+emacs.d/session*
+emacs.d/swank
 emacs.d/eshell
 emacs.d/url
