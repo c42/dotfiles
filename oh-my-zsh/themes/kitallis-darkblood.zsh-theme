@@ -30,12 +30,12 @@ function current_directory {
 function prompt_char() {
   git branch >/dev/null 2>/dev/null && echo "%{$fg[green]%}±%{$reset_color%}" && return
   hg root >/dev/null 2>/dev/null && echo "%{$fg_bold[red]%}☿%{$reset_color%}" && return
-  echo "%{$fg[cyan]%}◯%{$reset_color%}"
+  echo "%{$fg[cyan]%}λ%{$reset_color%}"
 }
 
 ## Prompts
-PROMPT=$'$(user_computer) $(git_info) $(current_directory) \n$(prompt_char) %{$reset_color%} '
-PS2=$'%{$fg[red]%}$(prompt_char) %{$reset_color%} '
+PROMPT=$'$(user_computer) $(git_info) $(current_directory) \n$(prompt_char) %{$reset_color%}'
+PS2=$'%{$fg[red]%}$(prompt_char) %{$reset_color%}'
 
 RPROMPT='$(rbenv_info)'
 
