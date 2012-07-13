@@ -43,7 +43,7 @@ alias drm='cd ~/code/rubymonk'
 # general
 alias la="ls -lach"
 alias lsd="ls | grep ^d"
-alias ack=ack-grep
+which ack >> /dev/null || alias ack=ack-grep
 
 # global aliases
 alias -g H='| head'
