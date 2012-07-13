@@ -99,11 +99,12 @@ export PATH="./bin:$PATH"
 alias vi=vim
 alias ep="vim ~/.zshrc && source ~/.zshrc"
 alias epaliases="vim ~/.zshrc-aliases && source ~/.zshrc-aliases"
+export EDITOR="vim"
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
   alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-  export GIT_EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
+  export EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
+  export GIT_EDITOR=$EDITOR
 fi
-export EDITOR="vim"
 
 
 # folder aliases
