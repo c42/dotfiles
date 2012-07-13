@@ -98,6 +98,7 @@ export PATH="./bin:$PATH"
 
 alias vi=vim
 alias ep="vim ~/.zshrc && source ~/.zshrc"
+alias epaliases="vim ~/.zshrc-aliases && source ~/.zshrc-aliases"
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
   alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
   export GIT_EDITOR="/Applications/MacVim.app/Contents/MacOS/Vim"
