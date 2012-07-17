@@ -106,6 +106,8 @@ if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
   export GIT_EDITOR=$EDITOR
 fi
 
+export LESS='-RM' # -R: print ANSI color escapes directly to the screen
+                  # -M: use very verbose prompt, with pos/%
 
 # folder aliases
 [[ -e ~/.zshrc-aliases ]] && source ~/.zshrc-aliases
