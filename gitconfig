@@ -4,9 +4,9 @@
 
 
 [alias]
-	ci = commit
-	co = checkout
-	st = status -sb
+  ci = commit
+  co = checkout
+  st = status -sb
   sh = stash
   cia = commit -am
   lg = log --oneline --graph --decorate
@@ -15,10 +15,10 @@
   conflictstyle = diff3
 
 [color]
-	ui = true
+  ui = true
 
 [core]
   excludesfile = ~/.gitignore
 
 [push]
-	default = tracking
+  default = tracking
