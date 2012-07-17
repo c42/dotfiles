@@ -1,7 +1,3 @@
-[user]
-	name = Steven Deobald
-	email = steven@c42.in
-
 
 [alias]
   ci = commit

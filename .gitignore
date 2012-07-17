@@ -9,3 +9,5 @@ emacs.d/session*
 emacs.d/swank
 emacs.d/eshell
 emacs.d/url
+gitconfig
+gitconfig.user

@@ -1,9 +1,19 @@
 #!/bin/bash
 replace=""
 
+[ -e 'gitconfig' ] && rm gitconfig
+if [ -e 'gitconfig.user' ]; then
+  cat gitconfig.user >> gitconfig
+else
+  echo "Create a gitconfig.user with just your own user details."
+fi
+cat gitconfig.withoutuser >> gitconfig
+
 for f in $(ls)
 do
   test $f = "install" && continue
+  test $f = "gitconfig.withoutuser" && continue
+  test $f = "gitconfig.user" && continue
   dest="$HOME/.$f"
   file="$PWD/$f"
   if [ -e $dest ] || [ -h $dest ]; then
