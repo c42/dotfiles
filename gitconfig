@@ -9,11 +9,16 @@
 	st = status -sb
   sh = stash
   cia = commit -am
+  lg = log --oneline --graph --decorate
+
+[merge]
+  conflictstyle = diff3
 
 [color]
 	ui = true
 
 [core]
   excludesfile = ~/.gitignore
+
 [push]
 	default = tracking
