@@ -83,8 +83,7 @@ alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gb='git branch'
 alias gba='git branch -a'
-alias glg='git log --pretty=oneline'
-
+alias glg='git lg'
 
 # directory options
 setopt auto_cd
