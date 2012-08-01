@@ -66,8 +66,10 @@ alias .......='cd ../../../../../..'
 alias ll="ls -l"
 if which brew &> /dev/null; then
   alias i="brew install"
+  alias up="brew upgrade"
 else if which apt-get &> /dev/null; then
     alias i="sudo apt-get install"
+    alias up="sudo apt-get upgrade"
   fi fi
 alias gi="gem install"
 alias ctags="/usr/local/Cellar/ctags/5.8/bin/ctags"
