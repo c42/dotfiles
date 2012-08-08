@@ -2,16 +2,12 @@
 ## kitallis, 2011-2012
 
 ## Helpers
-function check_for_rvmrc {
-  if [ -e `pwd`/.rvmrc ]; then ~/.rvm/bin/rvm-prompt; fi;
-}
-
 function rvm_info {
-  echo "%{$reset_color%} %{$fg[red]%}$(check_for_rvmrc)%{$reset_color%}"
+  echo "$(~/.rvm/bin/rvm-prompt)"
 }
 
 function rbenv_info {
-  rbenv local 2>/dev/null
+  echo "$(rbenv version | sed -e "s/ (set.*$//")"
 }
 
 function user_computer {
@@ -37,7 +33,13 @@ function prompt_char() {
 PROMPT=$'$(user_computer) $(git_info) $(current_directory) \n$(prompt_char) %{$reset_color%}'
 PS2=$'%{$fg[red]%}$(prompt_char) %{$reset_color%}'
 
-RPROMPT='$(rbenv_info)'
+if which rvm-prompt &> /dev/null; then
+  RPROMPT='%{$reset_color%} %{$fg[red]%}$(rvm_info) %{$reset_color%}'
+else
+  if which rbenv &> /dev/null; then
+    RPROMPT='%{$reset_color%} %{$fg[red]%}$(rbenv_info) %{$reset_color%}'
+  fi
+fi
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}[%{$fg_bold[white]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%{$fg[red]%}] "
