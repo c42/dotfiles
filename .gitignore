@@ -11,3 +11,4 @@ emacs.d/eshell
 emacs.d/url
 gitconfig
 gitconfig.user
+oh-my-zsh/custom/user-specific.zsh
