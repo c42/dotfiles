@@ -118,6 +118,16 @@ export LESS='-RM' # -R: print ANSI color escapes directly to the screen
 # folder aliases
 [[ -e ~/.zshrc-aliases ]] && source ~/.zshrc-aliases
 
+# quick access to directories
+# softlinks (e.g. rspec) created in the directory ~/.soft_links will 
+# be accessible as ~rspec from anywhere
+if [ -d ~/.soft_links ]; then
+  for i in $HOME/.soft_links/*; do
+    soft_link=`basename $i`;
+    hash -d $soft_link="$i"
+  done
+fi
+
 # rbenv
 eval "$(rbenv init -)"
 
