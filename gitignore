@@ -7,3 +7,5 @@ tmtags
 .idea/workspace.xml
 .idea
 .redcar
+*.sublime-project
+*.sublime-workspace
