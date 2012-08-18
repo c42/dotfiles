@@ -5,7 +5,7 @@
   st = status -sb
   sh = stash
   cia = commit -am
-  lg = log --pretty=format:\"%h %ad | %\"\"s%d [%an]\" --graph --date=short
+  lg = log --pretty=format:\"%C(red)%h%C(reset) %C(yellow)%cr%C(reset) | %\"\"s%d [%C(bold blue)%an%C(reset)]\" --graph --date=short
 
 [merge]
   conflictstyle = diff3
