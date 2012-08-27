@@ -2,9 +2,9 @@
 --smart-case
 --all
 --type-add
-html=.haml
+ruby=.haml,.rake
 --type-add
-css=.sass,.scss
+css=.sass,.scss,.less
 --type-add
 xml=.builder
 --type-set
