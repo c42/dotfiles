@@ -1,4 +1,7 @@
 --ignore-dir=.idea
+--ignore-dir=coverage
+--ignore-dir=log
+--ignore-dir=tmp
 --smart-case
 --all
 --type-add
