@@ -5,7 +5,11 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="kitallis-darkblood"
+if [ -f $ZSH/themes/`whoami`.zsh-theme ]; then
+    ZSH_THEME="`whoami`"
+else
+    ZSH_THEME="kitallis-darkblood"
+fi
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -29,7 +33,7 @@ ZSH_THEME="kitallis-darkblood"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby rails)
+plugins=(git rbenv ruby gem rails3 brew)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -134,3 +138,6 @@ eval "$(rbenv init -)"
 export PATH=./bin:~/.bin:$PATH
 
 export JRUBY_OPTS=--1.9
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
