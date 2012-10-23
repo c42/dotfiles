@@ -3,38 +3,57 @@ replace=""
 
 [ -e 'gitconfig' ] && rm gitconfig
 if [ -e 'gitconfig.user' ]; then
-  cat gitconfig.user >> gitconfig
+    cat gitconfig.user >> gitconfig
 else
-  echo "Create a gitconfig.user with just your own user details."
+    echo "Create a gitconfig.user with just your own user details."
 fi
 cat gitconfig.withoutuser >> gitconfig
 
+if [ ! -s $HOME/.oh-my-zsh ]; then
+    echo "time to get oh-my-zsh"
+    git clone --depth 1 git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
+else
+    echo "oh my zsh already exists - skipping it"
+fi
+
+if [ ! -s $HOME/.rbenv ]; then
+    rbenv_path=$HOME/.rbenv
+    echo "time to get rbenv"
+    git clone --depth 1 git://github.com/sstephenson/rbenv.git $rbenv_path
+    git clone git://github.com/sstephenson/ruby-build.git $rbenv_path/plugins
+else
+    echo "rbenv already exists - skipping it"
+fi
+
 for f in $(ls)
 do
-  test $f = "install" && continue
-  test $f = "gitconfig.withoutuser" && continue
-  test $f = "gitconfig.user" && continue
-  dest="$HOME/.$f"
-  file="$PWD/$f"
-  if [ -e $dest ] || [ -h $dest ]; then
-    if [ "$replace" != "a" ]; then 
-      echo "$dest already exists, replace? [y/n/a] "
-      read replace
-    fi
-    if [ "$replace" = "a" ] || [ "$replace" = "y" ]; then
-      echo "linking $file to $dest..."
-      rm -f $dest
-      ln -s $file $dest
-      test "$replace" != "a" && replace=""
+    test $f = "install" && continue
+    test $f = "gitconfig.withoutuser" && continue
+    test $f = "gitconfig.user" && continue
+    test $f = "oh-my-zsh" && continue
+    test $f = "rbenv" && continue
+    dest="$HOME/.$f"
+    file="$PWD/$f"
+    if [ -e $dest ] || [ -h $dest ]; then
+        if [ "$replace" != "a" ]; then
+            echo "$dest already exists, replace? [y/n/a] "
+            read replace
+        fi
+        if [ "$replace" = "a" ] || [ "$replace" = "y" ]; then
+            echo "linking $file to $dest..."
+            rm -f $dest
+            ln -s $file $dest
+            test "$replace" != "a" && replace=""
+        else
+            echo "skipping $file as it already exists..."
+        fi
+    elif [ "$f" == "README" ]; then
+        echo "skipping README: $f."
     else
-      echo "skipping $file as it already exists..."
+        echo "linking $file to $dest..."
+        ln -s $file $dest
     fi
-  elif [ "$f" == "README" ]; then  
-    echo "skipping README: $f."
-  else
-    echo "linking $file to $dest..."
-    ln -s $file $dest
-  fi
 done
+
 
 nano $HOME/.gitconfig

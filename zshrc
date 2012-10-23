@@ -1,11 +1,14 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+if [ -s $HOME/.oh-my-zsh-custom ]; then
+    ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-if [ -f $ZSH/themes/`whoami`.zsh-theme ]; then
+if [ -n $ZSH_CUSTOM ] && [ -f $ZSH_CUSTOM/`whoami`.zsh-theme ]; then
     ZSH_THEME="`whoami`"
 else
     ZSH_THEME="kitallis-darkblood"
