@@ -36,7 +36,8 @@ fi
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rbenv ruby gem rails3 brew)
+plugins=(git rbenv ruby gem rails3 brew bundler)
+
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -124,9 +125,8 @@ export LESS='-RM' # -R: print ANSI color escapes directly to the screen
 
 # folder aliases
 [[ -e ~/.zshrc-aliases ]] && source ~/.zshrc-aliases
-
 # quick access to directories
-# softlinks (e.g. rspec) created in the directory ~/.soft_links will 
+# softlinks (e.g. rspec) created in the directory ~/.soft_links will
 # be accessible as ~rspec from anywhere
 if [ -d ~/.soft_links ]; then
   for i in $HOME/.soft_links/*; do
@@ -144,3 +144,4 @@ export JRUBY_OPTS=--1.9
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
