@@ -112,7 +112,7 @@ export PATH="./bin:$PATH"
 
 alias vi=vim
 alias ep="vim ~/.zshrc && source ~/.zshrc"
-alias epaliases="vim ~/.zshrc-aliases && source ~/.zshrc-aliases"
+alias eplocal="vim ~/.zshrc.local && source ~/.zshrc.local"
 export EDITOR="vim"
 if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]; then
   alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
@@ -124,7 +124,8 @@ export LESS='-RM' # -R: print ANSI color escapes directly to the screen
                   # -M: use very verbose prompt, with pos/%
 
 # folder aliases
-[[ -e ~/.zshrc-aliases ]] && source ~/.zshrc-aliases
+[[ -e ~/.zshrc.local ]] && source ~/.zshrc.local
+
 # quick access to directories
 # softlinks (e.g. rspec) created in the directory ~/.soft_links will
 # be accessible as ~rspec from anywhere
@@ -144,4 +145,3 @@ export JRUBY_OPTS=--1.9
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
