@@ -82,7 +82,7 @@ alias be='bundle exec'
 export HISTFILE=~/.zhistory
 
 # git aliases
-alias gst='git status'
+alias gst='git st'
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff | mate'
@@ -119,7 +119,7 @@ export LESS='-RM' # -R: print ANSI color escapes directly to the screen
 [[ -e ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # quick access to directories
-# softlinks (e.g. rspec) created in the directory ~/.soft_links will 
+# softlinks (e.g. rspec) created in the directory ~/.soft_links will
 # be accessible as ~rspec from anywhere
 if [ -d ~/.soft_links ]; then
   for i in $HOME/.soft_links/*; do
@@ -129,7 +129,7 @@ if [ -d ~/.soft_links ]; then
 fi
 
 # rbenv
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PATH=./bin:~/.bin:$PATH
 
