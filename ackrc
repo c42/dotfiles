@@ -3,7 +3,6 @@
 --ignore-dir=log
 --ignore-dir=tmp
 --smart-case
---all
 --type-add
 ruby=.haml,.rake
 --type-add
