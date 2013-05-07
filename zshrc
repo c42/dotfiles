@@ -73,7 +73,7 @@ else if which apt-get &> /dev/null; then
   fi fi
 alias gi="gem install"
 alias ctags="/usr/local/Cellar/ctags/5.8/bin/ctags"
-alias refreshctags="ctags -f tags --recurse=yes . && find . -name '*.rb' -o -name '*.java' -o -name '*.cs' -o -name '*.js' -o -name '*.haml' -o -name '*.erb' >| cscope.files && cscope -b -q"
+alias refreshctags="ctags -f tags --recurse=yes . && find . -name '*.rb' -o -name '*.java' -o -name '*.cs' -o -name '*.js' -o -name '*.haml' -o -name '*.erb' -o -name '*.coffee' >| cscope.files && cscope -b -q"
 alias sp=spork
 alias r=rake
 alias b=bundle
