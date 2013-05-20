@@ -31,6 +31,9 @@ ZSH_THEME="kitallis-darkblood"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git ruby rails)
 
+DISABLE_UPDATE_PROMPT=true # will auto update without prompt
+#DISABLE_AUTO_UPDATE="true" # will disable auto updates entirely
+
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
