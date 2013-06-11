@@ -2,8 +2,8 @@
 --ignore-dir=coverage
 --ignore-dir=log
 --ignore-dir=tmp
---ignore-file=match:/tags/
---ignore-file=match:/cscope.out/
+--ignore-file=is:tags
+--ignore-file=match:/cscope/
 --smart-case
 --type-add
 ruby=.haml,.rake
