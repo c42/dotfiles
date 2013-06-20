@@ -1,5 +1,3 @@
-Pry.config.commands.import Pry::ExtendedCommands::Experimental
-
 class Object
   def _methods
     (methods - Object.methods).sort
