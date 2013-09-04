@@ -9,3 +9,5 @@ tmtags
 .redcar
 *.sublime-project
 *.sublime-workspace
+zeus.json
+custom_plan.rb

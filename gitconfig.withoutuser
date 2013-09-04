@@ -18,3 +18,11 @@
 
 [push]
   default = tracking
+
+[advice]
+  pushNonFastForward = false
+  statusHints = false
+  commitBeforeMerge = false
+  resolveConflict = false
+  implicitIdentity = false
+  detachedHead = false

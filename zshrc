@@ -39,6 +39,9 @@ DISABLE_AUTO_TITLE="true"
 plugins=(git rbenv ruby gem rails3 brew bundler)
 
 
+DISABLE_UPDATE_PROMPT=true # will auto update without prompt
+#DISABLE_AUTO_UPDATE="true" # will disable auto updates entirely
+
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
@@ -81,7 +84,7 @@ else if which apt-get &> /dev/null; then
   fi fi
 alias gi="gem install"
 alias ctags="/usr/local/Cellar/ctags/5.8/bin/ctags"
-alias refreshctags="ctags -f tags --recurse=yes . && find . -name '*.rb' -o -name '*.java' -o -name '*.cs' -o -name '*.js' -o -name '*.haml' -o -name '*.erb' >| cscope.files && cscope -b -q"
+alias refreshctags="ctags -f tags --recurse=yes . && find . -name '*.rb' -o -name '*.java' -o -name '*.cs' -o -name '*.js' -o -name '*.haml' -o -name '*.erb' -o -name '*.coffee' >| cscope.files && cscope -b -q"
 alias sp=spork
 alias r=rake
 alias b=bundle
@@ -90,7 +93,7 @@ alias be='bundle exec'
 export HISTFILE=~/.zhistory
 
 # git aliases
-alias gst='git status'
+alias gst='git st'
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff | mate'
@@ -137,7 +140,7 @@ if [ -d ~/.soft_links ]; then
 fi
 
 # rbenv
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PATH=./bin:~/.bin:$PATH
 
