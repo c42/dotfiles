@@ -36,7 +36,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rbenv ruby gem rails3 brew bundler)
+plugins=(git rbenv ruby gem rails brew bundler)
 
 
 DISABLE_UPDATE_PROMPT=true # will auto update without prompt
@@ -49,7 +49,6 @@ unsetopt correct_all
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 # aliases -----------------------------------------------------
-alias drm='cd ~/code/rubymonk'
 
 # general
 alias la="ls -lach"
@@ -89,6 +88,7 @@ alias sp=spork
 alias r=rake
 alias b=bundle
 alias be='bundle exec'
+alias pp='pwd | pbcopy'
 
 export HISTFILE=~/.zhistory
 
